@@ -1,4 +1,20 @@
 @import "bootstrap";
 
-body {background-color: aliceblue}
-a { text-decoration: none}
+html {
+  margin: 0;
+}
+
+a {
+  text-decoration: none
+}
+
+body {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
