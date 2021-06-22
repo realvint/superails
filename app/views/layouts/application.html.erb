@@ -15,10 +15,7 @@
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-  <%= link_to 'Home', root_path %>
-    <%= link_to 'Privacy', privacy_path %>
-    <%= link_to 'Terms', terms_path %>
-    <%= yield %>
+  <%= render 'layouts/header' %>
+  <%= yield %>
   </body>
 </html>
