@@ -2,16 +2,16 @@
   <br>
   <div class="container">
     <div class="row align-items-start">
-      <div class="col">
+      <div class="col-sm-4">
         some text
       </div>
-      <div class="col">
+      <div class="col-sm-4">
         <%= link_to privacy_path, class: " #{'active fw-bold' if current_page?(privacy_path)}" do %>
           <div class="fa fa-file-contract"></div>
           Privacy
         <% end %>
       </div>
-      <div class="col">
+      <div class="col-sm-4">
         <%= link_to terms_path, class: " #{'active fw-bold' if current_page?(terms_path)}" do %>
           <div class="fa fa-file-contract"></div>
           Terms
