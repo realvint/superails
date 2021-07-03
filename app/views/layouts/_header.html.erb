@@ -13,6 +13,10 @@
           <div class="fa fa-home"></div>
           Home
         <% end %>
+        <%= link_to questions_path, class: "nav-link #{'active fw-bold' if current_page?(questions_path)}" do %>
+          <div class="fa fa-question-circle"></div>
+          Questions
+        <% end %>
         <% if current_user %>
           <%= link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
             <div class="fa fa-users"></div>
