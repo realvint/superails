@@ -1,3 +1,19 @@
 <%= user.id %>
 <%= link_to_unless_current user.email, user %>
 <%= user.name %>
+
+<br>
+<%= 'sign_in_count'.humanize %>:
+<%= user.sign_in_count %>
+<br>
+<%= 'current_sign_in_at'.humanize %>:
+<%= user.current_sign_in_at %>
+<br>
+<%= 'last_sign_in_at'.humanize %>:
+<%= user.last_sign_in_at %>
+<br>
+<%= 'current_sign_in_ip'.humanize %>:
+<%= user.current_sign_in_ip %>
+<br>
+<%= 'last_sign_in_ip'.humanize %>:
+<%= user.last_sign_in_ip %>
