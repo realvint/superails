@@ -1,8 +1,17 @@
 <h2>All questions</h2>
+<%= link_to 'new', new_question_path%>
+
 <% @questions.each do |q| %>
   <h3><%= q.title %></h3>
   <time datetime="<%= q.formatted_created_at %>">
     <%= q.formatted_created_at %>
   </time>
-  <p><%= q.body %></p>
+  <p>
+    <%= q.body %>
+    <br>
+    <%= link_to 'show', question_path(q)%>
+    <%= link_to 'edit', edit_question_path(q)%>
+    <%= link_to 'delete', question_path(q), method: :delete, data: {confirm: 'are you sure?'}%>
+  </p>
+  <br>
 <% end %>

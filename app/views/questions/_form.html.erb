@@ -1,0 +1,13 @@
+<%= form_with model: @question do |f| %>
+  <div class="mb-3">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, minlength: 3, class: 'form-control'  %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :body %>
+    <%= f.text_area :body, required: true, minlength: 3, class: 'form-control'  %>
+  </div>
+  <div class="mb-3">
+    <%= f.submit class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>
