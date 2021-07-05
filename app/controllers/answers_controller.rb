@@ -6,8 +6,7 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to(question_path(@question), notice: 'Answer created!')
     else
-      @answers = Answer.order created_at: :desc
-      render 'questions/show'
+      redirect_to(question_path(@question), notice: 'Answer NOT created!')
     end
   end
 
