@@ -2,13 +2,7 @@
   <div class="card-body">
     <h2><%=@topic.name %></h2>
 
-    <%= form_with model: [@topic, @topic_message] do |f|%>
-      <div class="mb-3">
-        <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: 'Введите сообщение' %>
-        <%#= f.text_field :user_id, class: 'form-control' %>
-      </div>
-      <%= f.submit "Отправить", class: "btn btn-outline-success" %>
-    <% end %>
+    <%= render 'topic_message_form' %>
     <br>
     <h3>Все сообщения:</h3>
     <hr>
