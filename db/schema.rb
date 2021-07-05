@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_04_093113) do
+ActiveRecord::Schema.define(version: 2021_07_05_145807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 2021_07_04_093113) do
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "topic_messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "topic_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["topic_id"], name: "index_topic_messages_on_topic_id"
+    t.index ["user_id"], name: "index_topic_messages_on_user_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,4 +68,6 @@ ActiveRecord::Schema.define(version: 2021_07_04_093113) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "topic_messages", "topics"
+  add_foreign_key "topic_messages", "users"
 end

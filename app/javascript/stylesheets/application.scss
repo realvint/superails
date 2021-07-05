@@ -3,10 +3,13 @@ html {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
+  color: #222222;
 }
 
 body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  //font-size: 15px;
   word-break: break-all;
   background-color: #f8f9fa;
   display: flex;
@@ -16,4 +19,10 @@ body {
 
 footer {
   margin-top: auto;
+}
+
+.form-control:focus {
+  background-color: rgba(40, 167, 69, 0.04);
+  border-color: #28a745;
+  box-shadow: none;
 }

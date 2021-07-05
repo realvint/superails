@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <h2><%=@topic.name %></h2>
+
+    <%= form_with model: [@topic, @topic_message] do |f|%>
+      <div class="mb-3">
+        <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: 'Введите сообщение' %>
+        <%#= f.text_field :user_id, class: 'form-control' %>
+      </div>
+      <%= f.submit "Отправить", class: "btn btn-outline-success" %>
+    <% end %>
+    <br>
+    <h3>Все сообщения:</h3>
+    <hr>
+    <% @topic_messages.each do |topic_message| %>
+
+      <div class="row">
+        <div class="col">
+          <b><%= User.find_by_id(topic_message.user_id).try(:name)%></b> &nbsp;
+          <%=l(topic_message.created_at, format: :long)%> &nbsp;
+          <%=link_to edit_topic_topic_message_path(@topic, topic_message) do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to topic_topic_message_path(@topic, topic_message), method: :delete, data: { confirm: 'Вы уверены?' } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= topic_message.body %>
+        </div>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+
