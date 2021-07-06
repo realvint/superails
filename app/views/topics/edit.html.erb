@@ -1,6 +1,13 @@
 <div class="card">
   <div class="card-body">
-    <h1>Переименовать тему</h1>
+    <div class="card-title mb-3">
+      <h3>
+        <%= link_to 'Назад', topics_path, class: 'btn btn-outline-secondary btn-sm' %>
+        <div class="ps-2">
+          Редактировать обсуждение
+        </div>
+      </h3>
+    </div>
     <%= render 'form' %>
   </div>
 </div>

@@ -1,13 +1,17 @@
 <div class="card">
   <div class="card-body">
-    <h2><%=@topic.name %></h2>
+    <div class="card-title mb-3">
+      <h3>
+        <%= link_to 'Назад', topics_path, class: 'btn btn-outline-secondary btn-sm' %>
+        <div class="ps-2"><%= @topic.name %></div>
+      </h3>
+    </div>
 
     <%= render 'topic_message_form' %>
     <br>
     <h3>Все сообщения:</h3>
     <hr>
     <% @topic_messages.each do |topic_message| %>
-
       <div class="row">
         <div class="col">
           <b><%= User.find_by_id(topic_message.user_id).try(:name)%></b> &nbsp;

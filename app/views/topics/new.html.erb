@@ -1,7 +1,13 @@
 <div class="card">
   <div class="card-body">
-    <h2>Новое обсуждение</h2>
-
+    <div class="card-title mb-3">
+      <h3>
+        <%= link_to 'Назад', topics_path, class: 'btn btn-outline-secondary btn-sm' %>
+        <div class="ps-2">
+          Новое обсуждение
+        </div>
+      </h3>
+    </div>
     <%= render 'form' %>
   </div>
 </div>
