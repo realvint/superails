@@ -59,3 +59,6 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'caxlsx'
+gem 'caxlsx_rails'
+gem 'roo', "~> 2.8.0"

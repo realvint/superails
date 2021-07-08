@@ -10,6 +10,10 @@
           <div class="fa fa-home"></div>
           Home
         <% end %>
+        <%= link_to products_path, class: "nav-link #{'active fw-bold' if current_page?(products_path)}" do %>
+          <div class="fa fa-folder"></div>
+          Products
+        <% end %>
         <%= link_to questions_path, class: "nav-link #{'active fw-bold' if current_page?(questions_path)}" do %>
           <div class="fa fa-question-circle"></div>
           Questions

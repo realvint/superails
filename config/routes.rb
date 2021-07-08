@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :topics do
     resources :topic_messages
   end
+  resources :products do
+    get :export, on: :collection
+    post :import, on: :collection
+  end
 end
