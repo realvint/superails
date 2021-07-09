@@ -1,5 +1,4 @@
 <h2>Products</h2>
-
 <table class="table">
   <thead>
     <tr>
@@ -25,7 +24,7 @@
     <% end %>
   </tbody>
 </table>
-
+<%== pagy_bootstrap_nav(@pagy) %>
 <br>
 
 <%= link_to 'New Product', new_product_path %> |

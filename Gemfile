@@ -62,3 +62,4 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'caxlsx'
 gem 'caxlsx_rails'
 gem 'roo', "~> 2.8.0"
+gem 'pagy', '~> 3.5'
