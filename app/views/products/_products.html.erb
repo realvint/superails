@@ -1,0 +1,13 @@
+<% @products.each do |product| %>
+  <div class="d-flex justify-content-between ">
+    <%= product.name %>
+    <div class="d-flex justify-content-end">
+      <%= product.price %>&nbsp;
+      <%= product.in_stock %>&nbsp;
+      <%= link_to 'Show', product %>&nbsp;
+      <%= link_to 'Edit', edit_product_path(product) %>&nbsp;
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+  <hr>
+<% end %>
