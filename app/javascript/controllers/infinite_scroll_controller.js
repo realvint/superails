@@ -4,7 +4,10 @@ export default class extends Controller {
     static targets = ["entries", "pagination"]
 
     scroll() {
-       let url = this.paginationTarget.querySelector("a[rel='next']").href
+       let next_page = this.paginationTarget.querySelector("a[rel='next']")
+       if (next_page == null) { return }
+
+       let url = next_page.href
 
        const body = document.body,
            html = document.documentElement
@@ -12,7 +15,7 @@ export default class extends Controller {
        const height = Math.max(
            body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight
        )
-       if (window.pageYOffset >= height - window.innerHeight -100) {
+       if (window.pageYOffset >= height - window.innerHeight) {
           this.loadMore(url)
        }
     }

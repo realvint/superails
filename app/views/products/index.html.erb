@@ -1,17 +1,22 @@
 <h2>Products</h2>
+
+<%= link_to 'New Product', new_product_path %> |
+<%= link_to 'Export Products', export_products_path %>
+<hr>
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+<hr>
   <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
-     <div data-target="infinite-scroll.entries">
+     <div data-infinite-scroll-target="entries">
        <%= render 'products' %>
      </div>
      <div data-infinite-scroll-target="pagination">
       <%== pagy_nav @pagy %>
      </div>
   </div>
-  <br>
-  <%= link_to 'New Product', new_product_path %> |
-  <%= link_to 'Export Products', export_products_path %>
-  <hr>
-  <%= form_tag import_products_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import" %>
-  <% end %>
+
+
+
+

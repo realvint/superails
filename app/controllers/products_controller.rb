@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @pagy, @products = pagy Product.all
+    @pagy, @products = pagy Product.all.order :name
 
     respond_to do |format|
       format.html
