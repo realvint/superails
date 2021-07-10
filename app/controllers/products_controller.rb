@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
       format.html
       format.json {
         render json: { entries: render_to_string(partial: 'products', formats: [:html]),
-                       pagination: view_context.pagy_nav(@pagy) }
+                       pagination: view_context.pagy_bootstrap_nav(@pagy) }
       }
     end
   end
