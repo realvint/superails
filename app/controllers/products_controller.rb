@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @pagy, @products = pagy Product.all.order :name
+    @q = Product.order(:name).ransack(params[:q])
+    @pagy, @products = pagy(@q.result(distinct: true))
 
     respond_to do |format|
       format.html

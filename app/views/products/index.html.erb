@@ -8,6 +8,24 @@
   <%= submit_tag "Import" %>
 <% end %>
 <hr>
+<div class="d-flex">
+  <div>
+    <%= search_form_for @q do |f| %>
+      <%= f.label :name_cont %>
+      <%= f.search_field :name_cont %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="ps-3 align-items-center">
+    <% if params[:q].present? %>
+      <%= link_to products_path do %>
+        <i class="fa fa-sync"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<hr>
+
   <div data-controller="infinite-scroll">
      <div data-infinite-scroll-target="entries">
        <%= render 'products' %>
