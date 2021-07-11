@@ -21,3 +21,5 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "controllers"
+import './navbar'
+

@@ -63,5 +63,5 @@ gem 'caxlsx'
 gem 'caxlsx_rails'
 gem 'roo', "~> 2.8.0"
 gem 'pagy', '~> 3.5'
-
+gem 'ransack'
 gem "stimulus_reflex", "~> 3.4"
